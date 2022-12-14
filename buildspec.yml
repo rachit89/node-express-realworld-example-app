@@ -9,7 +9,7 @@ env:
 phases:
         build:
                 commands:
-                        - sed -i 's|mongodb://localhost/conduit|'$mongo_url'|g' app.js
+                        - sed -i 's|mongodb://localhost/conduit|'$mongo_url'|' app.js
                         - cat app.js
 artifacts:
         files:
