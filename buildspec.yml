@@ -1,0 +1,18 @@
+version: 0.2
+
+run-as: root
+
+env:
+        parameter-store:
+                mongo_url: "/aadesh/mongo_url"
+
+phases:
+        build:
+                commands:
+                        - sed -i 's|mongodb://localhost/conduit|mongo_url|g' app.js
+                        - cat app.js
+artifacts:
+        files:
+                - '**/*'
+                - echo "Build Artifacts created successfully"
+
