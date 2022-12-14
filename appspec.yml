@@ -1,0 +1,26 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /home/ubuntu/node-express-realworld-example-app
+    overwrite: true
+    timeout: 300
+
+hooks:
+  BeforeInstall:
+    - location: scripts/install.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_script.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_script.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
+      runas: root
