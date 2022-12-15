@@ -5,22 +5,22 @@ files:
   - source: /
     destination: /home/ubuntu/node-express-realworld-example-app
     overwrite: true
-    timeout: 300
+    timeout: 60
 
 hooks:
   BeforeInstall:
     - location: scripts/install.sh
-      timeout: 300
+      timeout: 60
       runas: root
   ApplicationStop:
     - location: scripts/stop_script.sh
-      timeout: 300
+      timeout: 60
       runas: root
   ApplicationStart:
     - location: scripts/start_script.sh
-      timeout: 300
+      timeout: 60
       runas: root
   ValidateService:
     - location: scripts/validate_service.sh
-      timeout: 300
+      timeout: 60
       runas: root
