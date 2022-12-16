@@ -7,12 +7,20 @@ env:
                 mongo_url: "/aadesh/mongo_url"
 
 phases:
+        install:
+                runtime-versions:
+                        nodejs: 16
+        pre_build:
+                commands:
+                        - npm install
         build:
                 commands:
-                        - sed -i "s|mongodb://localhost/conduit|$mongo_url|" app.js
+                        - sed -i 's|mongodb://localhost/conduit|'$mongo_url'|' app.js
+        post_build:
+                commands:
                         - cat app.js
 artifacts:
         files:
                 - '**/*'
-                - echo "Build Artifacts created successfully"
+                - echo "Build Artifacts created successfully and uploaded to S3 Bucket"
 
