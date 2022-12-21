@@ -1,6 +1,6 @@
 version: 0.0
 os: linux
-runas: root
+runas: aadesh
 
 files:
   - source: /
@@ -12,16 +12,16 @@ hooks:
   BeforeInstall:
     - location: scripts/install.sh
       timeout: 300
-      runas: root
+      runas: aadesh
   ApplicationStop:
     - location: scripts/stop_script.sh
       timeout: 300
-      runas: root
+      runas: aadesh
   ApplicationStart:
     - location: scripts/start_script.sh
       timeout: 300
-      runas: root
+      runas: aadesh
   ValidateService:
     - location: scripts/validate_service.sh
       timeout: 300
-      runas: root
+      runas: aadesh
