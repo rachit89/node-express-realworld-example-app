@@ -11,7 +11,8 @@ phases:
         build:
                 commands:
 #                          - sed -i 's|mongodb://localhost/conduit|'$mongo_url'|' app.js
-                         - echo "MONGODB_URI=$mongo_url" > .env
+                         - echo "NODE_ENV=production" > .env
+                         - echo "MONGODB_URI=$mongo_url" >> .env
                          - cat .env
         post_build:
                 commands:
