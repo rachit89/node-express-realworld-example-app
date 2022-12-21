@@ -1,6 +1,6 @@
 version: 0.2
 
-run-as: root
+run-as: aadesh
 
 env:
         parameter-store:
