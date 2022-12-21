@@ -10,7 +10,8 @@ phases:
                         - npm install
         build:
                 commands:
-                        - sed -i 's|mongodb://localhost/conduit|'$mongo_url'|' app.js
+#                          - sed -i 's|mongodb://localhost/conduit|'$mongo_url'|' app.js
+                         - echo "MONGODB_URI:$mongo_url" > .env
         post_build:
                 commands:
                         - cat app.js
