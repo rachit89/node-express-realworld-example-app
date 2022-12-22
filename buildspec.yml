@@ -1,24 +1,21 @@
+---
 version: 0.2
-
 env:
-        parameter-store:
-                mongo_url: "/aadesh/mongo_url"
-
+  parameter-store:
+    mongo_url: /aadesh/mongo_url
 phases:
-        pre_build:
-                commands:
-                        - npm install
-        build:
-                commands:
-#                          - sed -i 's|mongodb://localhost/conduit|'$mongo_url'|' app.js
-                         - echo "MONGODB_URI=$mongo_url" > .env
-                         - cat .env
-                         - ls -al
-        post_build:
-                commands:
-                        - cat app.js
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - echo "MONGODB_URI=$mongo_url" > .env
+      - cat .env
+      - ls -al
+  post_build:
+    commands:
+      - cat app.js
 artifacts:
-        files:
-                - '**/*'
-                - echo "Build Artifacts created successfully and uploaded to S3 Bucket"
-
+  files:
+    - "**/*"
+    - echo "Build Artifacts created successfully and uploaded to S3 Bucket"
