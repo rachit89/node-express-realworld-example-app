@@ -1,8 +1,8 @@
 ---
 version: 0.2
 env:
-  parameter-store:
-    mongo_url: /aadesh/mongo_url
+  secrets-manager:
+    mongo_url: "/mongodb/rachit-mongodb-url:rachit-mongodb-url"
 phases:
   pre_build:
     commands:
