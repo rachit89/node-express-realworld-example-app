@@ -19,3 +19,5 @@ artifacts:
   files:
     - "**/*"
     - echo "Build Artifacts created successfully and uploaded to S3 Bucket"
+    
+    
