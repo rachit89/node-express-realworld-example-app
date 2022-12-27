@@ -1,4 +1,12 @@
 #!/bin/bash
 
-cd /home/aadesh/node-express-realworld-example-app
-pm2 stop app.js
+cd /app/
+
+process_status=$( pm2 list | grep 'app' | awk '{print$18}')
+if [ $process_status == 'online' ]
+then
+        pm2 stop app
+        echo "process stopped successfully"
+else
+        echo "no process was running"
+fi
