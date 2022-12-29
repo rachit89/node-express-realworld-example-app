@@ -10,4 +10,4 @@ then
 else
         echo "no process was running"
 fi
-rm -rf *
+rm -rf /app/*
